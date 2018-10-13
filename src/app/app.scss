@@ -14,3 +14,33 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: K2D;
+    src: url(../assets/fonts/K2D/K2D.woff2) format("woff2");
+}
+body, * {
+    font-family: K2D;
+}
+.body {
+    max-width: 380px;
+    margin: auto;
+}
+.content {
+    background-color: #f2ffeb;
+}
+.text-center {
+    text-align: center;
+}
+ion-item.item {
+    background: none;
+}
+.mt-6 {
+    margin-top: 6px !important;
+}
+.note-md {
+    color: #5f5f5f;
+}
+.padding {
+    padding: 16px;
+}

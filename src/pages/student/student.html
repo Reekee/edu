@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>ข้อมูลส่วนตัว</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="body">
+        <ion-list *ngIf="loading && !loaded">
+            <ion-item>
+                <h2 class="mt-6 text-center">กำลังโหลด...</h2>
+            </ion-item>
+        </ion-list>
+        <div class="padding" *ngIf="!loading || loaded">
+            <div class="text-center">
+                <img class="profile-image" src="assets/imgs/logo.png">
+            </div>
+            <div class="profile-row">
+                <div class="profile-title">รหัสนักเรียน</div>
+                <div class="profile-desc">{{ data.student_code }}</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-title">ชื่อ - นามสกุล</div>
+                <div class="profile-desc">{{ data.student_pre }} {{ data.student_name }} {{ data.student_lname }}</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-title">ชั้นเรียน</div>
+                <div class="profile-desc">ป.{{ data.class }}</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-title">วันเกิด</div>
+                <div class="profile-desc">{{ data.bdate | thaiDate }}</div>
+            </div><br>
+            <button *ngIf="!hideLogout" ion-button block round item-end icon-start outline large color="danger" (click)="logout()">
+                <ion-icon name="log-out"></ion-icon> ออกจากระบบ
+            </button>
+        </div>
+    </div>
+</ion-content>

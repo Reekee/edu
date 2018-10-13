@@ -1,0 +1,33 @@
+page-information {
+    .title-image {
+        width: 100%;
+        margin: auto;
+    }
+    .profile {
+        text-align: center;
+        padding: 12px;
+        font-size: 12px;
+    }
+    .title-image img {
+        width: 100%;
+    }
+    .menu-item {
+        display: block;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .menu-icon {
+        font-size: 56px;
+        color: #009f2f;
+        margin-bottom: 5px;
+    }
+    .menu-name {
+        color: #000;
+        font-size: 12px;
+    }
+    .menu-badge {
+        position: absolute;
+        top: 5px;
+        right: 21px;
+    }
+}

@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>พฤติกรรม</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="body">
+        <div *ngIf="data.length==0">
+            <ion-list *ngIf="loading && !loaded">
+                <ion-item>
+                    <h2 class="mt-6 text-center">กำลังโหลด...</h2>
+                </ion-item>
+            </ion-list>
+            <ion-list *ngIf="!loading || loaded">
+                <ion-item>
+                    <h2 class="mt-6 text-center">ดีใจด้วย... ไม่พบข้อมูลพฤติกรรม</h2>
+                </ion-item>
+            </ion-list>
+        </div>
+        <div *ngIf="( !loading && data.length>0 ) || loaded">
+            <ion-card *ngFor="let item of data | orderBy: 'behavior_date'" class="sector">
+                <ion-card-header>
+                    <h2 class="title-sectot">{{ item.behavior_date | thaiDate }}</h2>
+                </ion-card-header>
+                <ion-card-content>
+                    <p class="body-sector">{{ item.behavior_desc }}</p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

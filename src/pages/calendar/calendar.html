@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>ปฏิทินกิจกรรม</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="body">
+        <div *ngIf="data.length==0">
+            <ion-list *ngIf="loading && !loaded">
+                <ion-item>
+                    <h2 class="mt-6 text-center">กำลังโหลด...</h2>
+                </ion-item>
+            </ion-list>
+            <ion-list *ngIf="!loading || loaded">
+                <ion-item>
+                    <h2 class="mt-6 text-center">ไม่พบกิจกรรมใหม่</h2>
+                </ion-item>
+            </ion-list>
+        </div>
+        <div *ngIf="( !loading && data.length>0 ) || loaded">
+            <ion-card *ngFor="let item of data | orderBy: 'date1'" class="sector">
+                <ion-card-header>
+                    <h2 class="title-sectot">{{ item.date1 | thaiDate }} - {{ item.date2 | thaiDate }}</h2>
+                </ion-card-header>
+                <ion-card-content>
+                    <p class="body-sector">{{ item.calendar_name }}</p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

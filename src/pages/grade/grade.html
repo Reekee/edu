@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>ผลการเรียน</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="body">
+        <div *ngIf="data.length==0">
+            <ion-list *ngIf="loading && !loaded">
+                <ion-item>
+                    <h2 class="mt-6 text-center">กำลังโหลด...</h2>
+                </ion-item>
+            </ion-list>
+            <ion-list *ngIf="!loading || loaded">
+                <ion-item>
+                    <h2 class="mt-6 text-center">ไม่พบรายวิชาที่เรียน</h2>
+                </ion-item>
+            </ion-list>
+        </div>
+        <div *ngIf="( !loading && data.length>0 ) || loaded">
+            <ion-list>
+                <ion-item *ngFor="let item of data | orderBy: 'register_id'">
+                    <ion-icon name='school' item-start></ion-icon>
+                    <h2 class="mt-6">{{ item.subject }}</h2>
+                    <ion-note item-end>
+                        {{ item.grade }}
+                    </ion-note>
+                </ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-item>
+                    <h2 class="mt-6">เกรดเฉลี่ย</h2>
+                    <ion-note item-end>
+                        {{ calAvg(data) }}
+                    </ion-note>
+                </ion-item>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>
