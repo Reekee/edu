@@ -29,6 +29,7 @@ export class MyApp {
             this.run();
         });
     }
+    //
     async run() {
         let auth: any = await this.session.getStorage('auth');
         if (!auth || !auth.student_id || !auth.student_code || !auth.bdate) {
