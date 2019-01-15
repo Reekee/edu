@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar color="theme">
+        <ion-title>เปลี่ยนรหัสผ่าน</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>รหัสผ่านเดิม</ion-label>
+            <ion-input type="password" [(ngModel)]="data.password1"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>รหัสผ่านใหม่</ion-label>
+            <ion-input type="password" [(ngModel)]="data.password2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>ยืนยันรหัสผ่านใหม่อีกครั้ง</ion-label>
+            <ion-input type="password" [(ngModel)]="data.password3"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button block round item-end icon-start outline large color="dark" (click)="changepass()">
+        <ion-icon name="build"></ion-icon> เปลี่ยนรหัสผ่าน
+    </button>
+</ion-content>

@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { LoadingController, AlertController, Platform, Events, App } from 'ionic-angular';
 import { OneSignal } from '@ionic-native/onesignal';
-import { StudentPage } from '../../pages/student/student';
-import { GradePage } from '../../pages/grade/grade';
 @Injectable()
 export class SessionProvider {
-    //public api = "http://localhost/edu/api/";
-    public api = "http://desktop-7ir60kp/edu/api/";
+    public api = "http://localhost/edu/api/";
+    //public api = "http://desktop-7ir60kp/edu/api/";
+    //public api = "http://172.20.10.5/edu/api/";
+    //public api = "http://aspire01/edu/api/";
     public auth: any = {};
     constructor(
         private plt: Platform,

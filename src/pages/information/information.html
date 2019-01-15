@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar color="secondary">
+    <ion-navbar color="theme">
         <ion-title>สารสนเทศ</ion-title>
     </ion-navbar>
 </ion-header>
@@ -12,16 +12,17 @@
         </ion-list>
         <div *ngIf="!loading || loaded">
             <div class="title-image">
-                <img src="assets/imgs/logo2.png">
+                <img src="assets/imgs/banner2.png">
             </div>
             <div class="profile">
                 <div>ข้อมูลสารสนเทศของ <strong>{{ student.student_pre }} {{ student.student_name }} {{ student.student_lname }}</strong></div>
             </div>
+
             <ion-grid class="menu">
                 <ion-row>
                     <ion-col col-4 *ngFor="let item of menu">
                         <a class="menu-item" (click)="openPage(item)">
-                            <ion-icon class="menu-icon" name="{{ item.icon }}"></ion-icon>
+                            <img [src]="'assets/imgs/'+item.img">
                             <div class="menu-name" [innerHTML]="item.name"></div>
                             <ion-badge *ngIf="item.badge!=0" class="menu-badge" color="{{ item.badgeColor }}">{{ item.badge }}</ion-badge>
                         </a>

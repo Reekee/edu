@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar color="secondary">
+    <ion-navbar color="theme">
         <ion-title>เข้าสู่ระบบ</ion-title>
     </ion-navbar>
 </ion-header>
@@ -12,14 +12,14 @@
                 <ion-input type="text" [(ngModel)]="auth.student_code"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label floating>วันเกิด</ion-label>
-                <ion-datetime displayFormat="D MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="auth.bdate"></ion-datetime>
+                <ion-label floating>รหัสผ่าน</ion-label>
+                <ion-input type="text" [(ngModel)]="auth.password"></ion-input>
             </ion-item>
         </ion-list>
         <ion-grid>
             <ion-row>
                 <ion-col col-6>
-                    <button ion-button block round item-end icon-start outline large color="secondary" (click)="login()">
+                    <button ion-button block round item-end icon-start outline large color="theme" (click)="login()">
                         <ion-icon name="log-in"></ion-icon> เข้าสู่ระบบ
                     </button>
                 </ion-col>

@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar color="secondary">
+    <ion-navbar color="theme">
         <ion-title>ข้อมูลส่วนตัว</ion-title>
     </ion-navbar>
 </ion-header>
@@ -12,7 +12,8 @@
         </ion-list>
         <div class="padding" *ngIf="!loading || loaded">
             <div class="text-center">
-                <img class="profile-image" src="assets/imgs/logo.png">
+                <img *ngIf="data.image==''" class="profile-image" src="assets/imgs/student.png">
+                <img *ngIf="data.image!=''" class="profile-image" [src]="session.api+'../files/student/'+data.image">
             </div>
             <div class="profile-row">
                 <div class="profile-title">รหัสนักเรียน</div>
@@ -30,6 +31,9 @@
                 <div class="profile-title">วันเกิด</div>
                 <div class="profile-desc">{{ data.bdate | thaiDate }}</div>
             </div><br>
+            <button *ngIf="!hideLogout" ion-button block round item-end icon-start outline large color="dark" (click)="changepass()">
+                <ion-icon name="build"></ion-icon> เปลี่ยนรหัสผ่าน
+            </button>
             <button *ngIf="!hideLogout" ion-button block round item-end icon-start outline large color="danger" (click)="logout()">
                 <ion-icon name="log-out"></ion-icon> ออกจากระบบ
             </button>

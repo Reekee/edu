@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { SessionProvider } from '../../providers/session/session';
 import { LoginPage } from '../login/login';
+import { ChangepassPage } from '../changepass/changepass';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,8 @@ export class StudentPage {
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
-        private session: SessionProvider
+        private session: SessionProvider,
+        private app: App
     ) {
         this.hideLogout = navParams.get("hideLogout");
     }
@@ -34,6 +36,9 @@ export class StudentPage {
             this.session.showAlert("ไม่สามารถติดต่อเครื่องแม่ข่าย");
             this.loading = false;
         }
+    }
+    changepass() {
+        this.app.getRootNav().push(ChangepassPage);
     }
     async logout() {
         let res: any = await this.session.showConfirm("คุณแน่ใจจะออกจากระบบใช่หรือไม่ ?");

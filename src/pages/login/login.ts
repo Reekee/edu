@@ -12,7 +12,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 export class LoginPage {
     auth: any = {
         student_code: "001",
-        bdate: "2018-09-30"
+        password: "123"
     };
     constructor(
         private platform: Platform,
@@ -40,7 +40,7 @@ export class LoginPage {
     reset() {
         this.auth = {
             student_code: "",
-            bdate: ""
+            password: ""
         };
     }
     setupPush() {

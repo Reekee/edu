@@ -25,6 +25,7 @@ import { ScheeduleTabsPage } from '../pages/scheedule-tabs/scheedule-tabs';
 import { GradePage } from '../pages/grade/grade';
 import { BehaviorPage } from '../pages/behavior/behavior';
 import { CalendarPage } from '../pages/calendar/calendar';
+import { ChangepassPage } from '../pages/changepass/changepass';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import { CalendarPage } from '../pages/calendar/calendar';
         ScheeduleTabsPage,
         GradePage,
         BehaviorPage,
-        CalendarPage
+        CalendarPage,
+        ChangepassPage
     ],
     imports: [
         BrowserModule,
@@ -68,7 +70,8 @@ import { CalendarPage } from '../pages/calendar/calendar';
         ScheeduleTabsPage,
         GradePage,
         BehaviorPage,
-        CalendarPage
+        CalendarPage,
+        ChangepassPage
     ],
     providers: [
         StatusBar,
