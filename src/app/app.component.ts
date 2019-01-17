@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { OneSignal } from '@ionic-native/onesignal';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SetApiPage } from '../pages/set-api/set-api';
 @Component({
     templateUrl: 'app.html'
 })
@@ -23,13 +24,23 @@ export class MyApp {
         private events: Events,
         private iab: InAppBrowser,
     ) {
-        this.platform.ready().then(() => {
+        this.platform.ready().then(async () => {
             this.statusBar.hide();
             this.splashScreen.hide();
-            this.run();
+            let api = await this.session.getStorage("api");
+            if( api ) this.session.api = api;
+            this.session.ajax("check-edu-api.php", {}, false).then(async (res: any)=>{
+                if( res.status ) {
+                    await this.session.setStorage("api", this.session.api);
+                    this.run();
+                } else {
+                    this.rootPage = SetApiPage;
+                }
+            }).catch(error=>{
+                this.rootPage = SetApiPage;
+            });
         });
     }
-    //
     async run() {
         let auth: any = await this.session.getStorage('auth');
         if (!auth || !auth.student_id || !auth.student_code || !auth.bdate) {

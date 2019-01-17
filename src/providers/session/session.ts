@@ -6,9 +6,6 @@ import { OneSignal } from '@ionic-native/onesignal';
 @Injectable()
 export class SessionProvider {
     public api = "http://localhost/edu/api/";
-    //public api = "http://desktop-7ir60kp/edu/api/";
-    //public api = "http://172.20.10.5/edu/api/";
-    //public api = "http://aspire01/edu/api/";
     public auth: any = {};
     constructor(
         private plt: Platform,

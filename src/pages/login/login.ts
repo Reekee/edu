@@ -12,7 +12,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 export class LoginPage {
     auth: any = {
         student_code: "001",
-        password: "123"
+        password: "222"
     };
     constructor(
         private platform: Platform,

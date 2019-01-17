@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="theme">
+        <ion-title>ระบุ Api Service</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Protocol</ion-label>
+            <ion-select [(ngModel)]="protocol" [disabled]="isConnect">
+                <ion-option value="http:">http://</ion-option>
+                <ion-option value="https:">https://</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Server</ion-label>
+            <ion-input type="text" [(ngModel)]="server" [disabled]="isConnect"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="name" [disabled]="isConnect"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div class="result">ผลลัพธ์ :</div>
+    <p class="display">{{ protocol }}//{{ server }}{{ name }}</p>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button *ngIf="isConnect==false" ion-button block outline round color="secondary" (click)="check()" icon-start>
+                    <ion-icon name="repeat"></ion-icon>
+                    ตรวจสอบ
+                </button>
+                <button *ngIf="isConnect==true" ion-button block outline round color="danger" (click)="edit()" icon-start>
+                    <ion-icon name="close"></ion-icon>
+                    แก้ไข
+                </button>
+            </ion-col>
+            <ion-col>
+                <button [disabled]="!isConnect" ion-button block outline round (click)="submit()" icon-start>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    ยืนยัน
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

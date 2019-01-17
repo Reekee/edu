@@ -14,6 +14,7 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { PipesModule } from '../pipes/pipes.module';
 
 import { MyApp } from './app.component';
+import { SetApiPage } from '../pages/set-api/set-api';
 import { LoadingPage } from '../pages/loading/loading';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -30,6 +31,7 @@ import { ChangepassPage } from '../pages/changepass/changepass';
 @NgModule({
     declarations: [
         MyApp,
+        SetApiPage,
         LoadingPage,
         LoginPage,
         TabsPage,
@@ -60,6 +62,7 @@ import { ChangepassPage } from '../pages/changepass/changepass';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
+        SetApiPage,
         LoadingPage,
         LoginPage,
         TabsPage,
