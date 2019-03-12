@@ -43,7 +43,7 @@ import { ChangepassPage } from '../pages/changepass/changepass';
         GradePage,
         BehaviorPage,
         CalendarPage,
-        ChangepassPage
+        ChangepassPage,
     ],
     imports: [
         BrowserModule,
@@ -74,7 +74,7 @@ import { ChangepassPage } from '../pages/changepass/changepass';
         GradePage,
         BehaviorPage,
         CalendarPage,
-        ChangepassPage
+        ChangepassPage,
     ],
     providers: [
         StatusBar,
